@@ -2,6 +2,9 @@
  aafigure README
 =================
 
+    This is a fork of aafigure
+    from https://launchpad.net/aafigure
+
 aafigure is an ASCII art to image converter.
 
     DD o--->
@@ -32,7 +35,10 @@ using Sphinx.
 
 Installation
 ============
+
 Detailed instructions about different install methods are described in the
 file documentation/manual.rst.
 
-Short version:  python setup.py install
+To install this fork use pip and install directly from repository::
+
+  pip install --user git+https://github.com/return42/aafigure
