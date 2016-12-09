@@ -42,3 +42,33 @@ file documentation/manual.rst.
 To install this fork use pip and install directly from repository::
 
   pip install --user git+https://github.com/return42/aafigure
+
+aafigure fork
+=============
+
+Migration from bazaar to git was done as described below.
+
+* install fastimport::
+
+    $ pip install fastimport
+
+* install bazaar's fast-import (-export tool) into your HOME::
+
+    $ mkdir -p ~/.bazaar/plugins
+    $ bzr branch lp:bzr-fastimport fastimport
+
+* checkout from launchpad and import into git::
+
+    $ bzr branch lp:aafigure aafigure
+    $ cd aafigure
+    $ git init
+    $ bzr fast-export --plain . | git fast-import
+
+* add remote *origin* and push up fork::
+
+    $ remote add origin https://github.com/return42/aafigure
+    $ git push origin master
+
+* remove bazar's files::
+
+    $ rm -rf .bzr-builddeb .bzrignore
